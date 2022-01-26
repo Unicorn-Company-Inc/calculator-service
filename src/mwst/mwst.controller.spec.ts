@@ -25,7 +25,6 @@ describe('MwstController', () => {
       const result = 19;
       const params = { price: 100 };
       const query = { percentage: undefined };
-      jest.spyOn(service, 'calculateMwst').mockImplementation(() => result);
 
       expect(await controller.getMwst(params, query)).toBe(result);
     });
@@ -33,7 +32,6 @@ describe('MwstController', () => {
       const result = 1;
       const params = { price: 100 };
       const query = { percentage: 1 };
-      jest.spyOn(service, 'calculateMwst').mockImplementation(() => result);
 
       expect(await controller.getMwst(params, query)).toBe(result);
     });

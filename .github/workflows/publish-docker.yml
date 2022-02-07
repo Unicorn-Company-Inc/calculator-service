@@ -12,6 +12,14 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
+      - name: Use PNPM
+        uses: pnpm/action-setup@v2.0.1
+        with:
+          version: 6.30.0
+          run_install: true
+      - name: Run tests
+        run: pnpm test
+      
       - name: Prepare
         id: prep
         run: |
